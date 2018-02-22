@@ -34,7 +34,7 @@ func CheckContact(newContact ContactDetails) string {
 	defer conn.Close()
 	hash := "friend:"
 	hash += newContact.Name
-	resp := conn.Cmd("HMSET", hash, "name", newContact.Name, "Age", newContact.Age, "favDrink1", newContact.FavDrink1, "favDrink2", newContact.FavDrink2)
+	resp := conn.Cmd("HMGET", hash, "name")
 	fmt.Println(resp)
 	if resp.Err != nil {
 		resp2 = "free"
