@@ -36,9 +36,9 @@ func CheckContact(newContact ContactDetails) string {
 	hash += newContact.Name
 	resp := conn.Cmd("HMSET", hash, "name", newContact.Name, "Age", newContact.Age, "favDrink1", newContact.FavDrink1, "favDrink2", newContact.FavDrink2)
 	if resp.Err != nil {
-		resp2 := "free"
+		resp2 = "free"
 	} else {
-	resp2 := "exists"
+	resp2 = "exists"
 	}
 	return resp2
 }
