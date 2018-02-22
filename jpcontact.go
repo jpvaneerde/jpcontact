@@ -36,7 +36,7 @@ func CheckContact(newContact ContactDetails) string {
 	hash += newContact.Name
 	resp := conn.Cmd("HMGET", hash, "name")
 	fmt.Println(resp)
-	if resp.Err != nil {
+	if resp.Err == Nil {
 		resp2 = "free"
 	} else {
 		resp2 = "exists"
