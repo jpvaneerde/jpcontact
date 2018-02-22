@@ -30,6 +30,7 @@ func CheckContact(newContact ContactDetails) string {
 	if err != nil {
 		// log.Fatal(err)
 	}
+	resp2 := "notSet"
 	defer conn.Close()
 	hash := "friend:"
 	hash += newContact.Name
