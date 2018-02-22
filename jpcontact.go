@@ -22,6 +22,6 @@ func AddContact(newContact ContactDetails) {
 	if resp.Err != nil {
 		// log.Fatal(resp.Err)
 	}
-	resp2 := conn.Cmd("HMGET", hash)
+	resp2 := conn.Cmd("HMGET", hash, "name")
 	fmt.Println(resp2)
 }
